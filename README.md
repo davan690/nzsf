@@ -1,5 +1,11 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+``` r
+#<!-- README.md is generated from README.Rmd. Please edit that file -->
+```
+
+> The extention of this repository for current mapping projects using
+> both invasive species modelling and marine mammal modelling tasks
+> conducted by Anthony Davidson `(@davan690)`
 
 # New Zealand Spatial Features <img src="man/figures/logo.png" align="right" height=140/>
 
@@ -11,8 +17,10 @@ scientific maps in New Zealand waters. The `nzsf` package relies heavily
 on the R packages `ggplot2`, `dplyr`, and `sf` providing a fresh and
 easy approach for complex mapping tasks. Maps can be built up in layers
 in the same way as `ggplot2` so users can easily add points,
-lines/arrows, polygons, coastlines, and much more.
+lines/arrows, polygons, coastlines, and much more. The extention of this
+package includes:
 
+1.  
 ## Installation
 
 The `nzsf` package can be installed from within R using:
@@ -43,8 +51,7 @@ help(package = "nzsf")
 
 The `nzsf` package includes many different shapefiles including New
 Zealand Quota Management Area (QMA) boundaries for many finfish and
-shellfish stocks
-including:
+shellfish stocks including:
 
 | Species code | Common name            | Scientific name             | Maori name           |
 | :----------: | :--------------------- | :-------------------------- | :------------------- |

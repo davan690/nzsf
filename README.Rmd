@@ -2,7 +2,10 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r}
+#<!-- README.md is generated from README.Rmd. Please edit that file -->
+```
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
@@ -11,13 +14,25 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+# gistr::as.gist("https://gist.github.com/davan690/paths_local_gist")
+
+# myPaths <- .libPaths("C:/Program Files/R/R-3.6.2/library")
+# myPaths <- c(myPaths)
+# .libPaths(myPaths)  # add new path
+# .libPaths()
 ```
+
+> The extention of this repository for current mapping projects using both invasive species modelling and marine mammal modelling tasks conducted by Anthony Davidson `(@davan690)`
 
 # New Zealand Spatial Features <img src="man/figures/logo.png" align="right" height=140/>
 
 [![Build Status](https://travis-ci.org/quantifish/nzsf.svg?branch=master)](https://travis-ci.org/quantifish/nzsf)
 
 New Zealand Spatial Features (`nzsf`) is a package for creating scientific maps in New Zealand waters. The `nzsf` package relies heavily on the R packages `ggplot2`, `dplyr`, and `sf` providing a fresh and easy approach for complex mapping tasks. Maps can be built up in layers in the same way as `ggplot2` so users can easily add points, lines/arrows, polygons, coastlines, and much more. 
+The extention of this package includes:
+
+1. 
 
 ## Installation
 

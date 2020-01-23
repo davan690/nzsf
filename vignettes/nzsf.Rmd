@@ -16,8 +16,13 @@ knitr::opts_chunk$set(
 
 The `nzsf` package relies heavily on the R packages `ggplot2`, `dplyr`, and `sf`. Maps can be built up in layers in the same way as `ggplot2`. A basic map of the New Zealand coastline with a north arrow and a scale bar can be built using the `nzsf` helper function `plot_coast` and functions from the `ggspatial` package:
 
-```{r echo=TRUE, fig.height=6, fig.width=6, message=FALSE}
+```{r}
+library(V8)
 library(nzsf)
+# .libPaths()[2]https://github.com/quantifish/nzsf
+
+# remotes::install_github("https://github.com/quantifish/nzsf", libs = "C:/Program Files/R/R-3.6.2/library")
+
 library(ggspatial)
 
 theme_set(theme_bw() + theme(axis.title = element_blank()))
@@ -27,13 +32,21 @@ ggplot() +
   plot_coast(resolution = "low", fill = "black", colour = "black", size = 0.3) +
   annotation_north_arrow(location = "tl", which_north = "true", style = north_arrow_nautical) +
   annotation_scale(location = "br", unit_category = "metric")
+
+# ??install_github
 ```
 
 Layers such as New Zealand marine reserves, depth countours, and Quota Management Areas (QMAs) can be added easily with several of the `nzsf` helper functions including `plot_marine_reserves`, `plot_depth`, and `plot_qma`. Maps can be retricted (e.g. to the North Island only) using a bounding box generated using `st_bbox` from the `sf` package:
 
 ```{r echo=TRUE, fig.height=6, fig.width=6, message=FALSE}
+library(nzsf)
+x <- nzsf::nz_coastlines_and_islands_polygons_topo_150k
+
+# head(unique(x$name))
+# get_coast()
+
 bbox <- get_coast() %>% 
-  filter(name %in% c("North Island or Te Ika-a-Māui")) %>%
+  filter(name %in% c("Goat Island")) %>%
   st_bbox()
 
 ggplot() +
@@ -41,7 +54,7 @@ ggplot() +
   plot_marine_reserves(fill = "red", colour = "red") +
   plot_qma(qma = "CRA", fill = NA) +
   plot_coast(fill = "grey", colour = NA, size = 0.3) +
-  annotation_north_arrow(location = "tr", which_north = "true", style = north_arrow_nautical) +
+  annotation_north_arrow(location = "tr", which_north = "false", style = north_arrow_nautical) +
   annotation_scale(location = "br", unit_category = "metric") +
   coord_sf(xlim = bbox[c(1, 3)], ylim = bbox[c(2, 4)])
 ```
@@ -57,7 +70,8 @@ sf_coast <- get_coast() %>%
   st_make_valid()
 lab <- st_difference(sf_jma, sf_coast) %>% 
   st_point_on_surface()
-# lab <- st_difference(sf_jma, sf_coast) %>% st_centroid()
+
+lab1 <- st_difference(sf_jma, sf_coast) %>% st_centroid()
 
 ggplot() +
   plot_qma(qma = "JMA", fill = NA) +

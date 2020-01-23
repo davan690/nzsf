@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+# devtools::install_github("davan690/nzsf")
 ```
 
 This vignette showcases `nzsf` applied to New Zeland rok lobster.
