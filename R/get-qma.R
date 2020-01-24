@@ -13,6 +13,12 @@
 #' 
 get_qma <- function(qma = "CRA", proj = proj_nzsf()) {
 
+  #general default
+  #does this match??
+  if (qma %in% c("UNX")) {
+    x <- nzsf::PackhorseRockLobster_QMA
+  }
+  
   # Shellfish
   if (qma %in% c("CRA", "crayfish")) {
     x <- nzsf::SpinyRedRockLobster_QMA

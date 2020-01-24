@@ -53,3 +53,5 @@ plot_statistical_areas <- function(proj = proj_nzsf(), area = "CRA", ...) {
   p <- geom_sf(data = x, ...)
   return(p)
 }
+
+get_statistical_areas(area = "UNX")
