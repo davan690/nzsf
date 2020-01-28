@@ -54,4 +54,4 @@ plot_statistical_areas <- function(proj = proj_nzsf(), area = "CRA", ...) {
   return(p)
 }
 
-get_statistical_areas(area = "UNX")
+# get_statistical_areas(area = "UNX")

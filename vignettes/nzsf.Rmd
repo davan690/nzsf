@@ -15,12 +15,10 @@ knitr::opts_chunk$set(
 
 #config
 #config
-myPaths <- .libPaths("C:/Program Files/R/R-3.6.2/library")
-myPaths <- c(myPaths)
-.libPaths(myPaths)  # add new path
-.libPaths()
-
-
+# myPaths <- .libPaths("C:/Program Files/R/R-3.6.2/library")
+# myPaths <- c(myPaths)
+# .libPaths(myPaths)  # add new path
+# .libPaths()
 ```
 
 The `nzsf` package relies heavily on the R packages `ggplot2`, `dplyr`, and `sf`. Maps can be built up in layers in the same way as `ggplot2`. A basic map of the New Zealand coastline with a north arrow and a scale bar can be built using the `nzsf` helper function `plot_coast` and functions from the `ggspatial` package:
